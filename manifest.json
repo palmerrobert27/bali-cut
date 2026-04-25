@@ -1,0 +1,25 @@
+{
+  "name": "Bali Cut · 10-Day Protocol",
+  "short_name": "Bali Cut",
+  "description": "10-Day meal plan and nutrition protocol for Bali.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070708",
+  "theme_color": "#070708",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111113"/>
+      <stop offset="100%" stop-color="#070708"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0c96a"/>
+      <stop offset="100%" stop-color="#c9a84c"/>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0c96a"/>
+      <stop offset="60%" stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#8a6820"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="url(#bg)"/>
+
+  <!-- Thin gold border ring -->
+  <rect x="16" y="16" width="480" height="480" rx="88" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.4"/>
+
+  <!-- Plate / barbell bar horizontal -->
+  <rect x="80" y="236" width="352" height="40" rx="8" fill="url(#gold2)"/>
+
+  <!-- Left collar -->
+  <rect x="68" y="210" width="28" height="92" rx="6" fill="url(#gold)"/>
+  <!-- Right collar -->
+  <rect x="416" y="210" width="28" height="92" rx="6" fill="url(#gold)"/>
+
+  <!-- Left outer plate -->
+  <rect x="30" y="194" width="38" height="124" rx="8" fill="url(#gold2)" opacity="0.85"/>
+  <!-- Right outer plate -->
+  <rect x="444" y="194" width="38" height="124" rx="8" fill="url(#gold2)" opacity="0.85"/>
+
+  <!-- Left inner plate -->
+  <rect x="56" y="202" width="12" height="108" rx="4" fill="#f0c96a" opacity="0.5"/>
+  <!-- Right inner plate -->
+  <rect x="444" y="202" width="12" height="108" rx="4" fill="#f0c96a" opacity="0.5"/>
+
+  <!-- Center knurl grip lines -->
+  <line x1="200" y1="242" x2="200" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+  <line x1="216" y1="242" x2="216" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+  <line x1="232" y1="242" x2="232" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+  <line x1="248" y1="242" x2="248" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+  <line x1="264" y1="242" x2="264" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+  <line x1="280" y1="242" x2="280" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+  <line x1="296" y1="242" x2="296" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+  <line x1="312" y1="242" x2="312" y2="270" stroke="#070708" stroke-width="2.5" opacity="0.5"/>
+
+  <!-- Text: BALI CUT -->
+  <text x="256" y="152" font-family="Georgia, serif" font-size="62" font-weight="bold" letter-spacing="10" fill="url(#gold)" text-anchor="middle">BALI</text>
+  <text x="256" y="408" font-family="Georgia, serif" font-size="38" font-weight="normal" letter-spacing="16" fill="url(#gold)" text-anchor="middle" opacity="0.8">CUT</text>
+
+  <!-- Small decorative lines flanking CUT -->
+  <line x1="100" y1="390" x2="165" y2="390" stroke="url(#gold)" stroke-width="1" opacity="0.4"/>
+  <line x1="347" y1="390" x2="412" y2="390" stroke="url(#gold)" stroke-width="1" opacity="0.4"/>
+
+  <!-- Subtle glow dot center -->
+  <circle cx="256" cy="256" r="6" fill="#f0c96a" opacity="0.15"/>
+</svg>
