@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1207,15 +1208,20 @@ function showDay(i){
 // ── AUTO-DAY ON LOAD ──────────────────────────────────
 function getTodayKey(){
   const d = new Date();
-  // Use local date parts to avoid UTC offset pushing to wrong day
   const y = d.getFullYear();
   const m = String(d.getMonth()+1).padStart(2,'0');
   const day = String(d.getDate()).padStart(2,'0');
-  return `${y}-${m}-${day}`;
-}
+  const key = `${y}-${m}-${day}`;
 
-// Debug helper — remove after confirming fix
-console.log('Today key:', getTodayKey(), '| Local time:', new Date().toString());
+  // DEBUG — shows date info on screen so we can see what's happening
+  const debug = document.createElement('div');
+  debug.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#ff0;color:#000;font-size:11px;padding:6px 10px;z-index:9999;font-family:monospace;text-align:center;';
+  debug.textContent = `Date: ${key} | Local: ${d.toLocaleString()} | UTC: ${d.toUTCString()} | Idx: ${DAY_MAP[key]}`;
+  document.body.appendChild(debug);
+  setTimeout(() => debug.remove(), 10000);
+
+  return key;
+}
 
 function autoJumpToToday(){
   const key = getTodayKey();
