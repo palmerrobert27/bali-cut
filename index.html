@@ -1150,7 +1150,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 </div><!-- /pages -->
 
 <script>
-// Global error catcher — shows real error on screen for debugging
+// Global error catcher - shows real error on screen for debugging
 window.onerror = function(msg, src, line, col, err) {
   var d = document.createElement('div');
   d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#ff0000;color:#fff;font-size:11px;padding:8px 12px;z-index:99999;font-family:monospace;word-break:break-all;';
@@ -1159,7 +1159,7 @@ window.onerror = function(msg, src, line, col, err) {
   return false;
 };
 
-// ── DAY MAP ──────────────────────────────────────────
+// -- DAY MAP ------------------------------------------
 // Maps each calendar date to a day index (0-9)
 const DAY_MAP = {
   '2026-04-21': 0, // Tue - Day 1
@@ -1174,12 +1174,12 @@ const DAY_MAP = {
   '2026-04-30': 9, // Thu - Day 10
 };
 
-// Meal schedule per day — [hour, minute, label, section index in nav (0=home)]
+// Meal schedule per day - [hour, minute, label, section index in nav (0=home)]
 // section param used for deep-link when notification tapped
 const MEAL_SCHEDULE = {
   0: [ // Day 1 Mon Training
     { h:11, m:30, label:'\u{1F37D} Lunch in 30 min', detail:'Chicken + Rice + Egg Whites', day:0 },
-    { h:15, m:15, label:'\u26A1 Pre-Workout in 30 min', detail:'Barebells + Clear Whey · After MOTS-c at 3:30', day:0 },
+    { h:15, m:15, label:'\u26A1 Pre-Workout in 30 min', detail:'Barebells + Clear Whey . After MOTS-c at 3:30', day:0 },
     { h:18, m:30, label:'\u{1F37D} Dinner in 30 min', detail:'Salmon + Potatoes + Eggs', day:0 },
   ],
   1: [ // Day 2 Tue Rest
@@ -1187,23 +1187,23 @@ const MEAL_SCHEDULE = {
     { h:18, m:0,  label:'\u{1F37D} Dinner in 30 min', detail:'Ground Turkey + Egg Whites', day:1 },
   ],
   2: [ // Day 3 Wed Refeed
-    { h:11, m:30, label:'\u{1F37D} Refeed Lunch in 30 min', detail:'Chicken + 1¾ cup Rice · Big meal today', day:2 },
-    { h:15, m:15, label:'\u26A1 Pre-Workout in 30 min', detail:'2× Clear Whey + Rice · After MOTS-c at 3:30', day:2 },
-    { h:18, m:30, label:'\u{1F37D} Refeed Dinner in 30 min', detail:'Salmon + Potatoes · Complete the carb load', day:2 },
+    { h:11, m:30, label:'\u{1F37D} Refeed Lunch in 30 min', detail:'Chicken + 13/4 cup Rice . Big meal today', day:2 },
+    { h:15, m:15, label:'\u26A1 Pre-Workout in 30 min', detail:'2x Clear Whey + Rice . After MOTS-c at 3:30', day:2 },
+    { h:18, m:30, label:'\u{1F37D} Refeed Dinner in 30 min', detail:'Salmon + Potatoes . Complete the carb load', day:2 },
   ],
   3: [ // Day 4 Thu Rest
     { h:11, m:30, label:'\u{1F37D} Lunch in 30 min', detail:'Canned Salmon + Egg Whites + Potatoes', day:3 },
-    { h:18, m:0,  label:'\u{1F37D} Dinner in 30 min', detail:'Tilapia + Eggs + 2× Clear Whey', day:3 },
+    { h:18, m:0,  label:'\u{1F37D} Dinner in 30 min', detail:'Tilapia + Eggs + 2x Clear Whey', day:3 },
   ],
   4: [ // Day 5 Fri Training
     { h:11, m:30, label:'\u{1F37D} Lunch in 30 min', detail:'Ground Turkey + Rice + Egg Whites', day:4 },
-    { h:15, m:15, label:'\u26A1 Pre-Workout in 30 min', detail:'Barebells + Clear Whey · After MOTS-c at 3:30', day:4 },
-    { h:18, m:30, label:'\u{1F37D} Dinner in 30 min', detail:'Salmon + Potatoes · Leg day recovery', day:4 },
+    { h:15, m:15, label:'\u26A1 Pre-Workout in 30 min', detail:'Barebells + Clear Whey . After MOTS-c at 3:30', day:4 },
+    { h:18, m:30, label:'\u{1F37D} Dinner in 30 min', detail:'Salmon + Potatoes . Leg day recovery', day:4 },
   ],
   5: [ // Day 6 Sat Training
     { h:11, m:30, label:'\u{1F37D} Lunch in 30 min', detail:'Chicken + Rice + Eggs', day:5 },
     { h:14, m:15, label:'\u26A1 Pre-Workout in 30 min', detail:'Barebells + Clear Whey', day:5 },
-    { h:18, m:30, label:'\u{1F37D} Dinner in 30 min', detail:'Sashimi + Edamame · or Salmon at home', day:5 },
+    { h:18, m:30, label:'\u{1F37D} Dinner in 30 min', detail:'Sashimi + Edamame . or Salmon at home', day:5 },
   ],
   6: [ // Day 7 Sun Training
     { h:11, m:30, label:'\u{1F37D} Lunch in 30 min', detail:'Canned Salmon + Egg Whites + Potatoes', day:6 },
@@ -1217,16 +1217,16 @@ const MEAL_SCHEDULE = {
   ],
   8: [ // Day 9 Tue Rest
     { h:11, m:30, label:'\u{1F37D} Lunch in 30 min', detail:'Canned Salmon + Eggs + Egg Whites', day:8 },
-    { h:18, m:0,  label:'\u{1F37D} Dinner in 30 min', detail:'Tilapia + 2× Clear Whey + Avocado', day:8 },
+    { h:18, m:0,  label:'\u{1F37D} Dinner in 30 min', detail:'Tilapia + 2x Clear Whey + Avocado', day:8 },
   ],
   9: [ // Day 10 Wed Training
-    { h:11, m:30, label:'\u{1F37D} Final Lunch in 30 min', detail:'Chicken + Rice + Egg Whites · Last day', day:9 },
-    { h:14, m:15, label:'\u26A1 Final Pre-Workout in 30 min', detail:'2× Clear Whey + Rice', day:9 },
-    { h:18, m:30, label:'\u{1F37D} Final Dinner in 30 min', detail:'Salmon + Potatoes + Eggs · Bali tomorrow \u{1F3DD}', day:9 },
+    { h:11, m:30, label:'\u{1F37D} Final Lunch in 30 min', detail:'Chicken + Rice + Egg Whites . Last day', day:9 },
+    { h:14, m:15, label:'\u26A1 Final Pre-Workout in 30 min', detail:'2x Clear Whey + Rice', day:9 },
+    { h:18, m:30, label:'\u{1F37D} Final Dinner in 30 min', detail:'Salmon + Potatoes + Eggs . Bali tomorrow \u{1F3DD}', day:9 },
   ],
 };
 
-// ── NAV ──────────────────────────────────────────────
+// -- NAV ----------------------------------------------
 function showDay(i){
   document.querySelectorAll('.dn-btn').forEach((b,idx)=>b.classList.toggle('active',idx===i));
   document.querySelectorAll('.day-panel').forEach((p,idx)=>p.classList.toggle('active',idx===i));
@@ -1236,7 +1236,7 @@ function showDay(i){
   window.scrollTo(0,0);
 }
 
-// ── AUTO-DAY ON LOAD ──────────────────────────────────
+// -- AUTO-DAY ON LOAD ----------------------------------
 function getTodayKey(){
   const d = new Date();
   const y = d.getFullYear();
@@ -1255,11 +1255,11 @@ function autoJumpToToday(){
 function autoJumpToToday(){
   const key = getTodayKey();
   const idx = DAY_MAP[key];
-  // Always call showDay — use today's index or fall back to 0
+  // Always call showDay - use today's index or fall back to 0
   showDay(idx !== undefined ? idx : 0);
 }
 
-// ── NOTIFICATIONS ─────────────────────────────────────
+// -- NOTIFICATIONS -------------------------------------
 async function requestNotifications(){
   if(!('Notification' in window)) return false;
   if(Notification.permission === 'granted') return true;
@@ -1306,7 +1306,7 @@ function scheduleNotificationsForToday(){
   });
 }
 
-// ── NOTIFICATION PERMISSION BANNER ───────────────────
+// -- NOTIFICATION PERMISSION BANNER -------------------
 function showNotifBanner(){
   if(!('Notification' in window)) return;
   if(Notification.permission === 'granted') return;
@@ -1354,7 +1354,7 @@ function dismissNotifBanner(){
   localStorage.setItem('notif-dismissed','1');
 }
 
-// ── INIT ─────────────────────────────────────────────
+// -- INIT ---------------------------------------------
 try {
   autoJumpToToday();
 } catch(e) { console.log('autoJump error:', e); }
