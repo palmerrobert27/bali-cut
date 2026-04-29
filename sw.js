@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bali-cut-v1';
+const CACHE_NAME = 'bali-cut-v3';
 const ASSETS = [
   './index.html',
   './manifest.json',
